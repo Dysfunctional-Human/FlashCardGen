@@ -117,7 +117,7 @@ def generate_questions(user_input: dict):
     global FINAL_QUESTIONS
     global document_ans_gen
     
-    USER_TEXT = user_input.get("text", "")
+    USER_TEXT = user_input["text"]
     document_ques_gen, document_ans_gen = text_splitting(USER_TEXT)
     question_gen_llm, _ =load_llm()
     
