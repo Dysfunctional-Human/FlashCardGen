@@ -176,9 +176,9 @@ def generate_answers():
     )
     
     qa_pairs = {}
-    for question in FINAL_QUESTIONS:
+    for i, question in enumerate(FINAL_QUESTIONS):
         answer=ans_gen_chain(question)
-        qa_pairs[question]=answer['result']
+        qa_pairs[i]=answer['result']
         
     return qa_pairs
 
