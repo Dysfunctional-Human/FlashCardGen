@@ -1,20 +1,22 @@
-from langchain_groq import ChatGroq
-from langchain.chains.summarize import load_summarize_chain
-from langchain.chains import RetrievalQA
-from langchain_text_splitters.character import RecursiveCharacterTextSplitter
-from langchain.docstore.document import Document
-from langchain.prompts import PromptTemplate
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
-from huggingface_hub import login
+from langchain_groq import ChatGroq # type: ignore
+from langchain.chains.summarize import load_summarize_chain# type: ignore
+from langchain.chains import RetrievalQA # type: ignore
+from langchain_text_splitters.character import RecursiveCharacterTextSplitter# type: ignore
+from langchain.docstore.document import Document# type: ignore
+from langchain.prompts import PromptTemplate# type: ignore
+from langchain_huggingface import HuggingFaceEmbeddings# type: ignore
+from langchain_community.vectorstores import FAISS# type: ignore
+from huggingface_hub import login# type: ignore
 import re
 import os
-from fastapi import FastAPI
-
+from fastapi import FastAPI# type: ignore
+import uvicorn# type: ignore
 app = FastAPI()
+
 @app.get("/")
 def index():
-    return {"Flash Card Generation Project"}
+    return {"message": "Flash Card Generation Project"}
+
 
 # Hugging face login
 hf_key='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'
@@ -112,7 +114,7 @@ def load_llm():
     return llm_question_gen, llm_answer_gen
 
 
-@app.post("/generate-questions")
+@app.post("/api/generate-questions")
 def generate_questions(user_input: dict):
     global FINAL_QUESTIONS
     global document_ans_gen
@@ -142,7 +144,7 @@ def generate_questions(user_input: dict):
     return filtered_questions_list
         
         
-@app.get("/generate-answers")
+@app.get("/api/generate-answers")
 def generate_answers():
     faiss_vector_store = FAISS.from_documents(document_ans_gen, hf_st_embeddings)
     
@@ -179,7 +181,7 @@ def generate_answers():
         qa_pairs[question]=answer['result']
         
     return qa_pairs
-        
+
      
 
 
