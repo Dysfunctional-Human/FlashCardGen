@@ -1,10 +1,10 @@
 import { FlashcardArray } from "react-quizlet-flashcard";
-import { Alert } from "./components/ui/Alert";
+import { Alert } from "../components/ui/Alert";
 import React, { useState } from "react";
-import { TextShimmer } from "./components/ui/text-shimmer";
+import { TextShimmer } from "../components/ui/text-shimmer";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
-function TrialApp() {
+function Generate() {
   const LoadingCard=[{
     id:0,
     frontHTML:<TextShimmer>Generating your questions...</TextShimmer>,
@@ -100,4 +100,4 @@ function TrialApp() {
     </>
   );
 }
-export default TrialApp;
+export default Generate;
