@@ -15,9 +15,22 @@ npm install
 npm run dev
 ```
 
-Todos:
+# Todos
 
-- [ ]  Complete About Contact and Login section
-- [ ]  Add auth and store flashcards in database
+Alen:
+
+- [ ]  Revamp/ Redo Flashcard component
+- [ ]  express backend
+- [ ]  Connect to DB (Store Flashcard)
+- [ ]  rate limit at backend (4 req per min)
+- [ ]  word limit (2500 words per min ~ 10000 chars)
 - [ ]  Add schemas for various users
-- [ ]  Add pdf to FlashCard support
+- [ ]  Add auth and store flashcards in database
+- [ ]  dashboard
+
+Aarav:
+
+- [ ]  revamp the “main.py” file
+- [ ]  image and pdf support
+- [ ]  comparison of user input with flashcards and giving them a rating score
+- [ ]  voice input ( speech to text)

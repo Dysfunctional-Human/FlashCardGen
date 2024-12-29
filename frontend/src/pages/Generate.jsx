@@ -54,9 +54,9 @@ function Generate() {
               backCardStyle={{backgroundColor:"#f7f7f72f"}} 
               />:
             <FlashcardArray cards={qa_pair} 
-              frontContentStyle={{display:"flex",alignItems:"center",justifyContent:"center",fontSize:"1.5rem",padding:"1rem"}}
+              frontContentStyle={{display:"flex",alignItems:"center",justifyContent:"center",fontSize:"1.5rem",padding:"1rem",textAlign:"center"}}
               frontCardStyle={{backgroundColor:"#f7f7f72f"}} 
-              backContentStyle={{display:"flex",alignItems:"center",justifyContent:"center" ,fontSize:"1rem",padding:"1rem",paddingTop:"2rem"}}
+              backContentStyle={{display:"flex",alignItems:"center",justifyContent:"center" ,fontSize:"1rem",padding:"1rem",paddingTop:"2rem",textAlign:"center"}}
               backCardStyle={{backgroundColor:"#f7f7f72f",overflow:"auto"}} 
             />}
             </>
