@@ -13,7 +13,7 @@ import Landing from './pages/Landing'
 import { ThemeProvider } from './components/themeprovider.jsx'
 import { AuroraBackground } from './components/ui/aurora-background'
 createRoot(document.getElementById('root')).render(
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <Router>
           <Routes>
             <Route path='/' element={<Layout/>}>
